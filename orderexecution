@@ -1,0 +1,26 @@
+
+ORDER OF SQL EXECUTION:
+
+        FROM 
+        
+        WHERE
+        
+        GROUP BY
+        
+        HAVING 
+        
+        SELECT 
+        
+        ORDER BY
+        
+        LIMIT 
+        
+        
+
+
+
+ 
+ 
+
+
+
