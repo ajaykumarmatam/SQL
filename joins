@@ -1,1 +1,25 @@
 
+
+Joins :
+=======
+1)Innerjoin
+
+2)left_join
+
+3)right _join 
+
+4)outer_join 
+
+
+1)inner_join : gives matching records from both tables.
+
+2)left-join : gives matching records from the both the tables and non matching records from the left table.
+
+3)right-table : gives matching records from the both tables and non matching records from the right tables.
+
+4)outer_join : gives matching and non matching records from the table.
+
+
+
+
+
