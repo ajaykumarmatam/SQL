@@ -1,0 +1,26 @@
+
+
+How to remove duplciate records 
+
+
+  Data Duplicated based on the Some of the columns 
+  
+  -----write a query to delete duplicate data from car tables 
+  
+  -----Duplicate record is identified based on the model and brand name .
+  
+  
+  
+  solution 1: Delete using unique identifier
+  
+  solution 2:Uisng SELF join 
+  
+  solution 3 : Using Window functions 
+  
+  solution 4 : Using Min function .This delete even multiple duplicate records.
+  
+  solution 5 : using back up table
+  
+  solution 6 : using back up table with out drping original table .
+  
+  
