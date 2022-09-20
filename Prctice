@@ -27,6 +27,7 @@ insert into TableA values('Revati','ID123',26,'F','Single',76000,'Chennai');
 select * from TableA;
 
 
+
 desc TableA;
 
 create table TableB(Employee_ID int,rent int,other_expenses int,other_income int,Place_of_residence varchar(10));
