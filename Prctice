@@ -1,0 +1,66 @@
+
+create table TableA(Employee_Name varchar(10),Employee_id int,Age int,sex varchar(20),Relationship_Status varchar(5),salary int,place_of_birth varchar(10));
+
+
+
+insert into TableA values('Reshma','ID101',23,'F','Single',60000,'Delhi');
+
+insert into TableA values('Shweta','ID106',34,'F','Married',65000,'Kolkata');
+
+insert into TableA values('Rahul','ID190',22,'M','Married',34000,'Chennai');
+
+insert into TableA values('Sameer','ID289',26,'M','Single',45000,'Bangalore');
+
+insert into TableA values('Jordan','ID057',27,'M','Married',56000,'Chennai');
+
+insert into TableA values('Shubham','ID087',21,'M','Married',78000,'Bombay');
+
+insert into TableA values('Mansi','ID754',25,'F','Single',57000,'Bombay');
+
+insert into TableA values('Sharad','ID546',23,'M','Single',65000,'Delhi');
+
+insert into TableA values('Swayam','ID954',23,'M','Single',67000,'Kolkata');
+
+insert into TableA values('Revati','ID123',26,'F','Single',76000,'Chennai');
+
+
+select * from TableA;
+
+
+desc TableA;
+
+create table TableB(Employee_ID int,rent int,other_expenses int,other_income int,Place_of_residence varchar(10));
+
+desc TableB;
+
+alter table TableA change column Relationship_Status  Relationship_Status varchar(8);
+
+select * from TableB;
+
+insert into TableB values('1D101',10000,9000,3000,'Bangalore');
+
+insert into TableB values('1D106',12000,7000,5600,'Delhi');
+
+insert into TableB values('1D190',12500,8000,6500,'Chennai');
+
+insert into TableB values('1D289',14500,7500,8700,'Chennai');
+
+insert into TableB values('1D057',8900,11000,3400,'Kolkata');
+
+insert into TableB values('1D087',7500,6500,5400,'Banglore');
+
+insert into TableB values('1D754',14500,7500,4600,'Bombay');
+
+insert into TableB values('1D546',13000,4500,7800,'Bangalore');
+
+insert into TableB values('1D954',11000,7600,19000,'Delhi');
+
+insert into TableB values('1D123',19000,10000,5100,'Bombay');
+
+update TableB set Place_of_residence ="Bangalore" where Employee_ID='1D087';
+
+
+
+  select TableA.Employee_ID,TableA.sex from TableA right join  TableB on TableA.Employee_ID = TableB.Employee_ID where salary >20000 & Place_of_residence like 'B%' group by Employee_ID;
+  
+    select TableA.Employee_ID,TableA.sex from TableB left join  TableA on TableA.Employee_ID = TableB.Employee_ID;
