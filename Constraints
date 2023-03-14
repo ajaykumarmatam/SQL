@@ -1,0 +1,54 @@
+foreign key : 
+
+The FOREIGN KEY constraint is used to prevent actions that would destroy links between tables.
+
+A FOREIGN KEY is a field (or collection of fields) in one table, that refers to the PRIMARY KEY in another table.
+
+The table with the foreign key is called the child table, and the table with the primary key is called the referenced or parent table.
+
+
+Syntax : 
+
+create table student(sid int primary key,name varchar(10),school_id int,foreign key(school_id) references school(id));
+
+Example: 
+
+mysql> create table school(id int,name varchar(10), primary key(id));
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> insert into school values(101,"chaitanya");
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into school values(102,"narayana");
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select * from school;
++-----+-----------+
+| id  | name      |
++-----+-----------+
+| 101 | chaitanya |
+| 102 | narayana  |
++-----+-----------+
+2 rows in set (0.00 sec)
+
+
+
+create table student(sid int primary key,name varchar(10),school_id int,foreign key(school_id) references school(id));
+Query OK, 0 rows affected (0.04 sec)
+
+mysql> describe student;
++-----------+-------------+------+-----+---------+-------+
+| Field     | Type        | Null | Key | Default | Extra |
++-----------+-------------+------+-----+---------+-------+
+| sid       | int         | NO   | PRI | NULL    |       |
+| name      | varchar(10) | YES  |     | NULL    |       |
+| school_id | int         | YES  | MUL | NULL    |       |
++-----------+-------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> insert into student values(1,"ajay",101);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into student values(2,"matam",103);
+ERROR 1452 (23000): Cannot add or update a child row: a foreign key constraint fails (`org`.`student`, CONSTRAINT `student_ibfk_1` FOREIGN KEY (`school_id`) REFERENCES `school` (`id`))
+mysql> 
