@@ -20,6 +20,161 @@ Joins :
 4)outer_join : gives matching and non matching records from the table.
 
 
+Example 1: 
+
+mysql> create database practice;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| practice           |
+| sys                |
++--------------------+
+5 rows in set (0.00 sec)
+
+mysql> use practice;
+Database changed
+
+TABLE1 :
+
+mysql> create table table1(id int);
+Query OK, 0 rows affected (0.03 sec)
+
+
+mysql> insert into table1 values(1) ;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into table1 values(1);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into table1 values(1);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into table1 values(2);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into table1 values(null);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into table1 values(3);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into table1 values(3);
+Query OK, 1 row affected (0.01 sec)
+
+TABLE2:
+
+
+mysql> create table table2(id int);
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> insert into table2 values(1);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into table2 values(1);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into table2 values(null);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into table2 values(4);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into table2 values(4);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from table1;
++------+
+| id   |
++------+
+|    1 |
+|    1 |
+|    1 |
+|    2 |
+| NULL |
+|    3 |
+|    3 |
++------+
+7 rows in set (0.00 sec)
+
+mysql> select * from table2;
++------+
+| id   |
++------+
+|    1 |
+|    1 |
+| NULL |
+|    4 |
+|    4 |
++------+
+5 rows in set (0.00 sec)
+
+
+InnerJoin :   6 reocords
+
+
+mysql> select t1.id,t2.id from table1 t1 join table2 t2 on(t1.id=t2.id);
++------+------+
+| id   | id   |
++------+------+
+|    1 |    1 |
+|    1 |    1 |
+|    1 |    1 |
+|    1 |    1 |
+|    1 |    1 |
+|    1 |    1 |
++------+------+
+6 rows in set (0.00 sec)
+
+
+Left join : 10 records 
+
+mysql> select t1.id,t2.id from table1 t1 left join table2 t2 on(t1.id=t2.id);
++------+------+
+| id   | id   |
++------+------+
+|    1 |    1 |
+|    1 |    1 |
+|    1 |    1 |
+|    1 |    1 |
+|    1 |    1 |
+|    1 |    1 |
+|    2 | NULL |
+| NULL | NULL |
+|    3 | NULL |
+|    3 | NULL |
++------+------+
+10 rows in set (0.00 sec)
+
+Right join : 9 records
+
+mysql> select t1.id,t2.id from table1 t1 right join table2 t2 on(t1.id=t2.id);
++------+------+
+| id   | id   |
++------+------+
+|    1 |    1 |
+|    1 |    1 |
+|    1 |    1 |
+|    1 |    1 |
+|    1 |    1 |
+|    1 |    1 |
+| NULL | NULL |
+| NULL |    4 |
+| NULL |    4 |
++------+------+
+9 rows in set (0.00 sec)
+
+full join : 
+
+
+
+
+
 
 
 
