@@ -1,4 +1,5 @@
-
+Example 1:
+=========
 mysql> show databases;
 +--------------------+
 | Database           |
@@ -152,4 +153,6 @@ mysql> with temp as(select * from student where dept_id=2) select * from(select 
 +------+------+-------+---------+
 1 row in set (0.00 sec)
 
-mysql> 
+
+Example 2:
+=========
