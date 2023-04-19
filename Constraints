@@ -94,9 +94,17 @@ mysql> insert into family2 values(2,null);
 ERROR 1048 (23000): Column 'name' cannot be null
 
 
+mysql> insert into family2 values(2,null);
+ERROR 1048 (23000): Column 'name' cannot be null
 
 
+=====================================================================================================================================================
 
+we can apply both contraints to the same column :
+==================================================
+
+mysql> create table family2(id int,name varchar(10) not null unique key);
+Query OK, 0 rows affected (0.03 sec)
 
 
 
