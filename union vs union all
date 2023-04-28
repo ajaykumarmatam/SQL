@@ -1,0 +1,48 @@
+UNION VS UNION ALL :
+--------------------
+These are used to join multiple tables.We can reduce multiple tables of data into simgle query.
+
+Three Concepts available in mysql to handle with Multiple tables 
+
+1.Joins 
+2.Sub Queries 
+3.UNION AND UNION ALL
+
+what is UNION AND UNION ALL 
+
+lets say we have table 1 and table 2
+
+Table1    Table2
+1          3
+3          5
+5          6
+
+UNION :
+
+It will extract data from the two tables but it eliminates the duplicates .
+
+1
+3
+5
+6
+
+UNION ALL :
+
+It will extract data from the two tables but it wont elimate the duplicates .
+
+1
+3
+3
+5
+5
+6
+
+
+
+
+
+
+
+
+
+
